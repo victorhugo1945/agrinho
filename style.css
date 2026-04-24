@@ -1,49 +1,30 @@
+:root {
+    --primary-green: #2d6a4f;
+    --strawberry-red: #ef233c;
+    --bg-light: #f8f9fa;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f4f0;
-    color: #2d3436;
-    margin: 0;
-    padding: 20px;
+    background-color: var(--bg-light);
+    font-family: 'Inter', sans-serif;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-h1 { color: #27ae60; }
-
-.dashboard {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.cards-container {
-    display: flex;
+.grid-sensores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    justify-content: space-between;
-    margin-bottom: 30px;
+    padding: 20px;
 }
 
 .card {
     background: white;
+    border-radius: 15px;
     padding: 20px;
-    border-radius: 12px;
-    flex: 1;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    border-top: 5px solid #27ae60;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-left: 8px solid var(--primary-green);
+    transition: transform 0.3s;
 }
 
-.card h3 { font-size: 0.9rem; color: #7f8c8d; }
-.card p { font-size: 1.8rem; font-weight: bold; margin: 10px 0; }
+.card:hover { transform: translateY(-5px); }
 
-.on { color: #2ecc71; }
-.off { color: #e74c3c; }
-
-.chart-container {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
+#temp-card { border-left-color: var(--strawberry-red); }
